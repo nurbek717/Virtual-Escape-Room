@@ -16,11 +16,10 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(Puzzle)
 class PuzzleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'room', 'puzzle_type', 'points', 'order', 'get_puzzle_type_display']
+    list_display = ['title', 'room', 'puzzle_type', 'points', 'order']
     list_filter = ['puzzle_type', 'room']
     search_fields = ['title', 'question', 'correct_answer']
     ordering = ['room', 'order']
-    list_editable = ['order', 'points']
     fieldsets = (
         ('Asosiy ma\'lumotlar', {
             'fields': ('room', 'title', 'description', 'puzzle_type', 'order', 'points')
