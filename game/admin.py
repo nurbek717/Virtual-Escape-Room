@@ -4,17 +4,31 @@ from .models import Room, Puzzle, UserProgress, UserStatistics
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
-    list_display = ['order', 'title', 'is_active', 'created_at']
+    list_display = ['order', 'title', 'is_active', 'puzzle_count', 'created_at']
     list_filter = ['is_active', 'created_at']
     search_fields = ['title', 'description']
+    list_editable = ['is_active']
+    
+    def puzzle_count(self, obj):
+        return obj.puzzles.count()
+    puzzle_count.short_description = 'Jumboqlar soni'
 
 
 @admin.register(Puzzle)
 class PuzzleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'room', 'puzzle_type', 'points', 'order']
+    list_display = ['title', 'room', 'puzzle_type', 'points', 'order', 'get_puzzle_type_display']
     list_filter = ['puzzle_type', 'room']
-    search_fields = ['title', 'question']
+    search_fields = ['title', 'question', 'correct_answer']
     ordering = ['room', 'order']
+    list_editable = ['order', 'points']
+    fieldsets = (
+        ('Asosiy ma\'lumotlar', {
+            'fields': ('room', 'title', 'description', 'puzzle_type', 'order', 'points')
+        }),
+        ('Jumboq', {
+            'fields': ('question', 'correct_answer', 'hint')
+        }),
+    )
 
 
 @admin.register(UserProgress)
