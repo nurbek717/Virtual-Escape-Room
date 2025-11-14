@@ -42,8 +42,10 @@ python manage.py runserver
 ```
 
 6. **Admin panelga kirish:**
-- URL: http://127.0.0.1:8000/admin/
-- Superuser hisobidan kirish
+- [URL: http://127.0.0.1:8000/admin/](https://nurbek.pythonanywhere.com/admin/login/?next=/admin/)
+-	•	Username: staffadmin
+	•	Password: Xa!92_zQpLom48
+
 
 ## 📝 Foydalanish
 
