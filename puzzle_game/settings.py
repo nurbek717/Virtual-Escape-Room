@@ -18,9 +18,12 @@ SECRET_KEY = 'django-insecure-change-this-in-production-12345'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Nurbek.pythonanywhere.com', '127.0.0.1', 'localhost', '*']
+ALLOWED_HOSTS = ['nurbek.pythonanywhere.com', '127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = [
+    'https://nurbek.pythonanywhere.com',
+]
 
-
+LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
