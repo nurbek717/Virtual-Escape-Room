@@ -90,7 +90,7 @@ Admin panel orqali:
 - Xonalar qo'shish/tahrirlash
 - Jumboqlar qo'shish/tahrirlash
 - Foydalanuvchi progressini ko'rish
-- Statistikani kuzatish
+- Statistikani kuzatish vakazi
 
 ## 📝 Eslatmalar
 
