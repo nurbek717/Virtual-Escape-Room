@@ -100,4 +100,4 @@ Admin panel orqali:
 - Har bir jumboq bir necha marta urinish mumkin
 
 
-# Virtual-Escape-Room
+# Virtual-Escape-Roomm
